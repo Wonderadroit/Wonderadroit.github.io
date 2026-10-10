@@ -1,0 +1,12 @@
+{
+  "name": "wonderadroit-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Browser regression checks for the Wonderadroit QA portfolio",
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
