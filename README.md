@@ -11,6 +11,10 @@ A premium editorial portfolio in an ivory-and-cobalt visual system, built as a s
 - Downloadable Markdown QA report and copy-to-clipboard action.
 - Accessibility basics including visible keyboard focus, semantic controls, live status messages, and reduced-motion support.
 
+## Browser regression checks
+
+A GitHub Actions workflow (`.github/workflows/portfolio-browser-qa.yml`) runs Playwright checks on pushes and pull requests to `main`, and can be started manually from the Actions tab. The six Chromium checks cover page content, product search/filtering, the seeded price mismatch, observation/reference reveal, report download contents, reset behavior, and a narrow mobile viewport. The checks must pass in GitHub Actions before browser behavior can be called verified.
+
 ## Transparency and limitations
 
 - The storefront defect is synthetic and intentionally injected for demonstration.
