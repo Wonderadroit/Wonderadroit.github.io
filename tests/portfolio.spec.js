@@ -4,7 +4,7 @@ test('premium portfolio content and primary navigation render', async ({ page })
   await page.goto('/');
   await expect(page).toHaveTitle('Wonder Olabisi | Security Engineering, Migration Technology & QA');
   await expect(page.getByRole('heading', { name: /Build systems.*Test the evidence/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Try the interactive QA lab/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Try the QA lab/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Northstar Supply' })).toBeVisible();
   await expect(page.getByText(/not a real customer finding/i)).toBeVisible();
   await expect(page.getByRole('link', { name: /Explore CYDRA Web2 on GitHub/i })).toHaveAttribute('href', 'https://github.com/Wonderadroit/Cydra_web2');
