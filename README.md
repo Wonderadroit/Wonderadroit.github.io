@@ -1,41 +1,66 @@
-# Wonderadroit — Quality you can verify
+# Wonderadroit — Wonder Olabisi
 
-A premium editorial portfolio in an ivory-and-cobalt visual system, built as a static GitHub Pages site. It presents QA services, an interactive browser-local case study, a transparent testing approach, and the CYDRA Web2 project.
+A static, responsive portfolio for Wonder Olabisi (Wonderadroit), presenting practical work across security engineering, cybersecurity, data quality, migration technology and software quality.
 
-## Portfolio features
+## Portfolio focus
 
-- Responsive portfolio landing page focused on QA gigs, hiring opportunities, and CYDRA.
-- Interactive fictional storefront with product search, category filtering, cart interactions, and reset.
-- Guided mission to reproduce a deliberately seeded price mismatch (Travel Mug listing: $18; cart line item: $21).
-- Observation form and expected-versus-actual reference check.
-- Downloadable Markdown QA report and copy-to-clipboard action.
-- Accessibility basics including visible keyboard focus, semantic controls, live status messages, and reduced-motion support.
+- Security engineering and evidence-led application / smart-contract security research.
+- Data quality, provenance, auditability and digital systems.
+- Browser QA, exploratory testing and Playwright regression automation.
+- Project Frontier: independent applied research using synthetic and public aggregate data.
+- CYDRA Web2: experimental Web2 security research engine.
+- Interactive browser-local QA case study with a deliberately seeded pricing inconsistency.
+
+## Interactive QA demonstration
+
+The fictional Northstar Supply storefront supports product search, category filtering, cart interactions, reset, guided observation and a downloadable Markdown report. The Travel Mug listing deliberately shows $18 while its cart line item shows $21.
+
+**Important:** this is a controlled synthetic training example, not a real client finding, production defect or vulnerability. It does not process purchases, collect credentials or test external targets.
+
+## Project Frontier status and boundaries
+
+Project Frontier is an independent portfolio and learning initiative. It is not an official Nigeria Immigration Service, government or institutional project, and it has no claimed government endorsement. Current demonstrations use synthetic and public aggregate data only. They do not use real traveller records, passports, NINs, biometrics, personnel records or operational government systems.
 
 ## Browser regression checks
 
-A GitHub Actions workflow (`.github/workflows/portfolio-browser-qa.yml`) runs Playwright checks on pushes and pull requests to `main`, and can be started manually from the Actions tab. The six Chromium checks cover page content, product search/filtering, the seeded price mismatch, observation/reference reveal, report download contents, reset behavior, and a narrow mobile viewport. The checks must pass in GitHub Actions before browser behavior can be called verified.
+The GitHub Actions workflow `.github/workflows/portfolio-browser-qa.yml` runs Playwright checks on pushes and pull requests to `main`, and can be started manually. Chromium tests cover:
 
-## Transparency and limitations
+- Main content, project positioning and metadata.
+- Product search and category filtering.
+- Reproduction of the seeded price mismatch.
+- Observation and reference-result flow.
+- Downloaded report contents and synthetic disclosure.
+- Reset behavior and narrow mobile layout.
+- Mobile navigation, skip link and Project Frontier disclosure.
 
-- The storefront defect is synthetic and intentionally injected for demonstration.
-- The report labels the scenario as synthetic; it is not a real client finding or a security vulnerability.
-- The demo is browser-local: it does not process purchases, collect credentials, or test external targets.
-- No fabricated client logos, testimonials, or production results are presented.
-- This repository is a static site and requires no package installation or build step.
+A passing workflow verifies only the tested behavior at the tested commit. It does not establish the security or quality of unrelated systems.
+
+## Technology
+
+- Static HTML, CSS and JavaScript.
+- Playwright browser tests.
+- GitHub Actions.
+- Python's built-in HTTP server for local test serving.
+
+No frontend build step is required.
 
 ## Publish with GitHub Pages
 
 1. Open **Settings → Pages** in this repository.
 2. Under **Build and deployment**, choose **Deploy from a branch**.
 3. Select branch `main` and folder `/ (root)`, then save.
-4. Wait for the GitHub Pages deployment to complete.
+4. Confirm the Pages deployment in **Actions** or **Settings → Pages**, then open the published URL.
 
-Expected site URL: https://Wonderadroit.github.io/
+Expected URL: https://wonderadroit.github.io/
 
-A commit to `main` does not by itself prove that Pages is enabled or deployed. Confirm deployment in **Actions** or **Settings → Pages** and then open the published URL.
+A source commit or passing test run does not, by itself, prove that the published site has deployed successfully.
 
-## CYDRA Web2
+## Featured repositories
 
-Project repository: https://github.com/Wonderadroit/Cydra_web2
+- CYDRA Web2: https://github.com/Wonderadroit/Cydra_web2
+- Project Frontier: https://github.com/Wonderadroit/Wonderadroit/tree/main/PROJECT_FRONTIER
+- Profile: https://github.com/Wonderadroit
 
-CYDRA is presented as a work in progress exploring evidence-led web testing. A passing workflow is not the same as a confirmed finding; real target results must be supported by reproducible evidence.
+## Working principle
+
+**LLMs propose. Tools test. Evidence decides.**
