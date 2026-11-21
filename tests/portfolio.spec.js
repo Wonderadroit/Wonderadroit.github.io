@@ -74,3 +74,33 @@ test('layout remains usable at a narrow mobile viewport', async ({ page }) => {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
   expect(overflow).toBe(false);
 });
+
+
+test('professional positioning, Project Frontier and metadata are present', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle(/Wonder Olabisi.*Security Engineering/i);
+  await expect(page.getByRole('heading', { name: /Build systems.*Test the evidence/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Project Frontier.*trustworthy digital systems/i })).toBeVisible();
+  await expect(page.getByText(/Not an NIS or government system/i)).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://wonderadroit.github.io/');
+  await expect(page.locator('meta[property="og:description"]')).toHaveAttribute('content', /Project Frontier/);
+});
+
+test('mobile navigation opens, follows a link and closes accessibly', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto('/');
+  const menu = page.getByRole('button', { name: /Menu/ });
+  await expect(menu).toHaveAttribute('aria-expanded', 'false');
+  await menu.click();
+  await expect(menu).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Project Frontier' })).toBeVisible();
+  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Project Frontier' }).click();
+  await expect(menu).toHaveAttribute('aria-expanded', 'false');
+  await expect(page).toHaveURL(/#frontier$/);
+});
+
+test('skip link moves keyboard users to the main content', async ({ page }) => {
+  await page.goto('/');
+  const skip = page.getByRole('link', { name: 'Skip to content' });
+  await expect(skip).toHaveAttribute('href', '#main-content');
+});
