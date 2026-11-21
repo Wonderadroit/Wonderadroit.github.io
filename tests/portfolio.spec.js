@@ -2,8 +2,8 @@ const { test, expect } = require('@playwright/test');
 
 test('premium portfolio content and primary navigation render', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('Wonderadroit — Quality you can verify');
-  await expect(page.getByRole('heading', { name: /I find the bugs users actually feel/i })).toBeVisible();
+  await expect(page).toHaveTitle('Wonder Olabisi | Security Engineering, Migration Technology & QA');
+  await expect(page.getByRole('heading', { name: /Build systems.*Test the evidence/i })).toBeVisible();
   await expect(page.getByRole('link', { name: /Try the interactive QA lab/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Northstar Supply' })).toBeVisible();
   await expect(page.getByText(/not a real customer finding/i)).toBeVisible();
@@ -69,7 +69,7 @@ test('reset clears cart and restores the locked reference state', async ({ page 
 test('layout remains usable at a narrow mobile viewport', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: /I find the bugs users actually feel/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Build systems.*Test the evidence/i })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Add Travel Mug to cart' })).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
   expect(overflow).toBe(false);
